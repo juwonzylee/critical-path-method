@@ -6,14 +6,14 @@ from cpm.Activity import (
 
 
 # Initializing the activities
-A = ActivityEdge(5, [], (1, 2))
-B = ActivityEdge(4, [A], (2, 3))
-C = ActivityEdge(5, [A], (2, 4))
-D = ActivityEdge(3, [A], (2, 5))
-E = ActivityEdge(2, [B], (3, 4))
-F = ActivityEdge(2, [C, E], (4, 5))
-G = ActivityEdge(1, [D, F], (5, 6))
-H = ActivityEdge(1, [G], (6, 7))
+A = ActivityEdge(5, [])
+B = ActivityEdge(4, [A])
+C = ActivityEdge(5, [A])
+D = ActivityEdge(3, [A])
+E = ActivityEdge(2, [B])
+F = ActivityEdge(2, [C, E])
+G = ActivityEdge(1, [D, F])
+H = ActivityEdge(1, [G])
 
 # Initializing the project nodes
 p1 = ProjectNode([])
@@ -43,9 +43,19 @@ _ = p3.findLateStart(maxDuration, [(E, p4)])
 _ = p2.findLateStart(maxDuration, [(B, p3), (C, p4), (D, p5)])
 _ = p1.findLateStart(maxDuration, [(A, p2)])
 
+# Calculate free float for all activity edges
+_ = A.findFreeFloat((p1, p2))
+_ = B.findFreeFloat((p2, p3))
+_ = C.findFreeFloat((p2, p4))
+_ = D.findFreeFloat((p2, p5))
+_ = E.findFreeFloat((p3, p4))
+_ = F.findFreeFloat((p4, p5))
+_ = G.findFreeFloat((p5, p6))
+_ = H.findFreeFloat((p6, p7))
+
 # Initialize project with nodes and edges
 proj = CriticalPath([A, B, C, D, E, F, G, H],
                     [p1, p2, p3, p4, p5, p6, p7])
 
 # Calculate the critical path
-res_path = proj.findCriticalPath()
+# res_path = proj.findCriticalPath()

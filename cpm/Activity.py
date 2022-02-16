@@ -1,22 +1,26 @@
 class ActivityEdge:
-    def __init__(self, Duration, Prereq, Nodepath):
+    def __init__(self, Duration, Prereq):
         """
         Initializes the activity edges with
-        duration, list of prerequisites,
-        and a tuple of the nodes connecting the activity edge.
+        duration, and list of prerequisite activities.
         """
-        self.path = Nodepath
         self.duration = Duration
         self.prereq = Prereq
         self.freefloat = 0
 
-    def findFreeFloat():
+    def findFreeFloat(self, path):
         """
         Calculates the free float of the activity
         based on the early start time and late start time of
         node path.
+        FF(activity) = LT(endNode) - ET(startNode) - Dur(activity)
         """
-        pass
+        startNode, endNode = path
+        self.freefloat = endNode.lateStart - startNode.earlyStart -\
+            self.duration
+        
+        print("Free Float of activity ", self, ": ", self.freefloat)
+        return self.freefloat
 
 
 class ProjectNode:
