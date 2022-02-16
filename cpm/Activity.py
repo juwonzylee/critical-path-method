@@ -1,9 +1,10 @@
 class ActivityEdge:
-    def __init__(self, Duration, Prereq):
+    def __init__(self, Duration, name, Prereq):
         """
         Initializes the activity edges with
         duration, and list of prerequisite activities.
         """
+        self.name = name
         self.duration = Duration
         self.prereq = Prereq
         self.freefloat = 0
@@ -18,8 +19,7 @@ class ActivityEdge:
         startNode, endNode = path
         self.freefloat = endNode.lateStart - startNode.earlyStart -\
             self.duration
-        
-        print("Free Float of activity ", self, ": ", self.freefloat)
+
         return self.freefloat
 
 
@@ -43,6 +43,7 @@ class ProjectNode:
         # if one prereq, add duration of prereq + previous node's early start
         elif len(self.inputPaths) == 1:
             prereq, prenode = self.inputPaths[0]
+            # print(prereq.duration, prenode.earlyStart)
             self.earlyStart = prereq.duration + prenode.earlyStart
         # if more than one prereq, find the maximum
         else:

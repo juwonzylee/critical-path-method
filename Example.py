@@ -6,14 +6,14 @@ from cpm.Activity import (
 
 
 # Initializing the activities
-A = ActivityEdge(5, [])
-B = ActivityEdge(4, [A])
-C = ActivityEdge(5, [A])
-D = ActivityEdge(3, [A])
-E = ActivityEdge(2, [B])
-F = ActivityEdge(2, [C, E])
-G = ActivityEdge(1, [D, F])
-H = ActivityEdge(1, [G])
+A = ActivityEdge(5, 'A', [])
+B = ActivityEdge(4, 'B', [A])
+C = ActivityEdge(5, 'C', [A])
+D = ActivityEdge(3, 'D', [A])
+E = ActivityEdge(2, 'E', [B])
+F = ActivityEdge(2, 'F', [C, E])
+G = ActivityEdge(1, 'G', [D, F])
+H = ActivityEdge(1, 'H', [G])
 
 # Initializing the project nodes
 p1 = ProjectNode([])
@@ -58,4 +58,5 @@ proj = CriticalPath([A, B, C, D, E, F, G, H],
                     [p1, p2, p3, p4, p5, p6, p7])
 
 # Calculate the critical path
-# res_path = proj.findCriticalPath()
+res_path = proj.findCriticalPath()
+print(res_path)
