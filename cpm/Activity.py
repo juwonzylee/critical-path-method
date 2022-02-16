@@ -1,5 +1,3 @@
-# import networkx as nx
-
 class ActivityEdge:
     def __init__(self, Duration, Prereq, Nodepath):
         """
@@ -10,10 +8,13 @@ class ActivityEdge:
         self.path = Nodepath
         self.duration = Duration
         self.prereq = Prereq
+        self.freefloat = 0
 
-    def calculate(activity):
+    def findFreeFloat():
         """
-        Recursively calculate late start time
+        Calculates the free float of the activity
+        based on the early start time and late start time of
+        node path.
         """
         pass
 

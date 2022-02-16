@@ -1,14 +1,15 @@
 class CriticalPath:
-    def __init__(self, NodesList):
+    def __init__(self, EdgesList, NodesList):
         """
         Initializes the graph by taking in
-        a list of activity nodes
+        a list of activity edges and project nodes
         """
+        self.edges = EdgesList
         self.nodes = NodesList
 
     def findCriticalPath():
         """
-        Calculates the critical path using the activities'
-        early and late start times
+        Calculates and prints the critical path
+        using the activities' free float.
         """
         pass

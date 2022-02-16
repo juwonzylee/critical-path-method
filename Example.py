@@ -1,8 +1,9 @@
+from cpm.CriticalPath import CriticalPath
 from cpm.Activity import (
     ActivityEdge,
     ProjectNode
 )
-# from cpm.CriticalPath import CriticalPath
+
 
 # Initializing the activities
 A = ActivityEdge(5, [], (1, 2))
@@ -41,3 +42,10 @@ _ = p4.findLateStart(maxDuration, [(F, p5)])
 _ = p3.findLateStart(maxDuration, [(E, p4)])
 _ = p2.findLateStart(maxDuration, [(B, p3), (C, p4), (D, p5)])
 _ = p1.findLateStart(maxDuration, [(A, p2)])
+
+# Initialize project with nodes and edges
+proj = CriticalPath([A, B, C, D, E, F, G, H],
+                    [p1, p2, p3, p4, p5, p6, p7])
+
+# Calculate the critical path
+res_path = proj.findCriticalPath()
