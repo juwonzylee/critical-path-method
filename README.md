@@ -5,7 +5,7 @@ in addition to the critical path of the project.
 
 The code is structured in the [cpm] module, where the nodes and edges objects are defined in [Activity.py](./cpm/Activity.py), and the project in [CriticalPath.py](./cpm/CriticalPath.py).
 
-The tests written in [test_Activity.py](./cpm/test_Activity.py) are based on Question 8.4.4 from Chapter 8 of Operations Research.
+The tests written in [test_Activity.py](./cpm/test_Activity.py) are based on Question 8.4.4 from Chapter 8 of *Operations Research*.
 The tests written in [test_CriticalPath.py](./cpm/test_CriticalPath.py) are based on Question 8.4.10 from the same textbook.
 
 ## Requirements
