@@ -19,3 +19,8 @@ The tests are written in pytest format such that each crucial Python file with a
 ```bash
 $ pytest
 ```
+
+## Assumptions and Limitations
+This program assumes that the user manually inputs the nodes and edges of the project network in order to calculate the critical path.
+This could be automated further so the user only has to put in the activities, duration, and dependencies to pre-requisite activities.
+In addition, the program only accepts projects with activities on edges, and not activities on nodes. 
