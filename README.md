@@ -1,3 +1,21 @@
-# critical-path-method
+# Critical Path Method
 
-We use activities on edges to calculate the critical path of a project.
+A critical path in project management is the longest sequence of activities that must be finished on time in order for the entire project to be complete. This program sets the activities on edges and calculates the early, late start time, and free float of the activities 
+in addition to the critical path of the project. 
+
+The code is structured in the [cpm] module, where the nodes and edges objects are defined in [Activity.py], and the project in [CriticalPath.py].
+
+The tests written in [test_Activity.py] are based on Question 8.4.4 from Chapter 8 of Operations Research.
+The tests written in [test_CriticalPath.py] are based on Question 8.4.10 from the same textbook.
+
+## Requirements
+To install the requirements please run:
+```bash
+$ pip install -r requirements.txt
+```
+
+## Running the tests
+The tests are written in pytest format such that each crucial Python file with a name `x.py` has an accompanying test file `test_x.py`.  Hence, to run all the tests, simply run:
+```bash
+$ pytest
+```

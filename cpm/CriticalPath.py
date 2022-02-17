@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-
 class CriticalPath:
     def __init__(self, EdgesList, NodesList):
         """
@@ -11,7 +9,7 @@ class CriticalPath:
 
     def findCriticalPath(self):
         """
-        Calculates and prints the critical path
+        Calculates the critical path
         using the activities' free float.
         """
         path = []
