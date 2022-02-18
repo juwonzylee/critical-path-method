@@ -3,10 +3,11 @@
 A critical path in project management is the longest sequence of activities that must be finished on time in order for the entire project to be complete. This program sets the activities on edges and calculates the early, late start time, and free float of the activities 
 in addition to the critical path of the project. 
 
-The code is structured in the [cpm] module, where the nodes and edges objects are defined in [Activity.py](./cpm/Activity.py), and the project in [CriticalPath.py](./cpm/CriticalPath.py).
+The code is structured in the [cpm](./cpm) module, where the nodes and edges objects are defined in [Activity.py](./cpm/Activity.py), and the project in [CriticalPath.py](./cpm/CriticalPath.py).
 
 The tests written in [test_Activity.py](./cpm/test_Activity.py) are based on Question 8.4.4 from Chapter 8 of *Operations Research*.
 The tests written in [test_CriticalPath.py](./cpm/test_CriticalPath.py) are based on Question 8.4.10 from the same textbook.
+The network graph for Question 8.4.10 is visualized in the same test file, [test_CriticalPath.py](./cpm/test_CriticalPath.py).
 
 ## Requirements
 To install the requirements please run:
