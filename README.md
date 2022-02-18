@@ -7,7 +7,7 @@ The code is structured in the [cpm](./cpm) module, where the nodes and edges obj
 
 The tests written in [test_Activity.py](./cpm/test_Activity.py) are based on Question 8.4.4 from Chapter 8 of *Operations Research*.
 The tests written in [test_CriticalPath.py](./cpm/test_CriticalPath.py) are based on Question 8.4.10 from the same textbook.
-The network graph for Question 8.4.10 is visualized in the same test file, [test_CriticalPath.py](./cpm/test_CriticalPath.py).
+The network graph for Question 8.4.10 is visualized in the same test file, [test_CriticalPath.py](./cpm/test_CriticalPath.py), which outputs to [example.jpg](./example.jpg).
 
 ## Requirements
 To install the requirements please run:
