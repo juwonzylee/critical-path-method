@@ -125,4 +125,4 @@ def test_visualize():
     attrs = nx.get_node_attributes(G_test, 'Duration')
     nx.draw_networkx_labels(G_test, pos=pos_attrs, labels=attrs)
     plt.margins(0.1)
-    plt.show()
+    plt.savefig("./example.jpg")
